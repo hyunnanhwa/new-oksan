@@ -1,0 +1,61 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fff;
+}
+
+.loader {
+    position: relative;
+    width: 200px;
+    height: 150px;
+}
+
+.circle, .triangle {
+    position: absolute;
+}
+
+.circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #1F4E2A;
+    border: 2px solid #fff;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: dropBounceAndRoll 5s ease forwards;
+    z-index: 1;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #1F4E2A;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes dropBounceAndRoll {
+    0% {
+        top: -20px;
+    }
+    30% {
+        top: 35px;
+        left: 50%;
+    }
+    60% {
+        top: 20px;
+        left: 48%;
+    }
+    100% {
+        top: 65px;
+        left: 34%;
+        transform: translateX(-50%);
+    }
+}
